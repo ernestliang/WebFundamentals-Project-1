@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title></title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Bootstrap 4 Align Right</h1>
+    <hr />
+    <div>
+      <p>Note that the <code>d-flex</code> class indicates <strong>display:flex</strong>, while the
+        <code>flex-row</code> classes sets the flex-direction along its main axis while <code>flex-column</code>
+        sets the flex-direction along its cross-axis.
+      </p>
+      <p>The <code>btn</code> class applies Bootstrap's default button looks and behaviour to an element.
+        <br>
+        The <code>p-x</code> (where <strong>x</strong> represents a number) class adds padding when applied.</p>
+    </div>
+    <hr/>
+    <div class="p-2">
+      <p class="btn btn-outline-primary float-start">Float left</p>
+      <p class="btn btn-outline-primary float-right">Float right</p>
+      <br />
+    </div>
+    <hr/>
+    <div class="d-flex flex-row justify-content-end p-1">
+      <p>I am using justify-content-end class</p>
+    </div>
+    <hr/>
+
+    <h3> Align Items End</h3>
+    <div class="d-flex flex-column align-items-end">
+      <p>item 1</p>
+      <p>Item 2</p>
+    </div>
+    <hr/>
+
+    <div class="d-flex flex-column">
+      <h3> Align Self End </h3>
+      <div>Item 1</div>
+      <div class="align-self-end">Item 2</div>
+      <div>Item 3</div>
+    </div>
+    <hr/>
+    <div class="d-flex">
+      <p class="btn btn-outline-primary ml-auto">ml.auto</p>
+    </div>
+    <hr/>
+    <p class="text-right">This text is aligned to the right.</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HELP Mock-Up</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body class="p-5 container-fluid">
+        <!-- Navigation Bar -->
+        <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/Logo.webp" width="50px" height="50px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Categories
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Skincare</a>
+                            <a class="dropdown-item" href="#">Healthcare</a>
+                            <a class="dropdown-item" href="#">Food</a>
+                            <a class="dropdown-item" href="#">Utensils</a>
+                        </div>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#HotDeals"> Hot Deals! </a>
+                    </li>
+                </ul>
+                <div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        Register
+                    </button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        Log In
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="container-md p-5">
+            <div class="row p-5">
+                <div class="col-12">
+                    <h2>INSERT CAPTIVATING TITLE HERE</h2>
+                </div>
+            </div>
+            <div class="row">
+                <!-- This is the Product Picture -->
+                <div class="col-12 col-md-4 col-lg-4 animate__animated animate__backInDown">
+                    <img src="images/Computer Product.webp" class="large">
+                </div>
+                <div class="col-12 col-md-8 col-lg-8">
+                    <!-- This is the Set of Tabs for Descrition -->
+                    <div class="container-fluid">
+                        <h2>INSERT PRODUCT NAME HERE</h2>
+                    </div>
+                    <br/>
+                    <!-- Tab Top Selection -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#home">BENEFITS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#Menu1">INGREDIENTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#Menu2">TESTIMONIALS</a>
+                        </li>
+                    </ul>
+                    <!-- Tab Content -->
+                    <div class="tab-content animate__animated animate__backInRight">
+                        <div id="home" class="container tab-pane active animate__animated animate__backInUp">
+                            <br/>
+                            <h3>HOME</h3>
+                            <p>"Raynor. I don't know what gutter my son fished you out of, but even you've got to realize that treacherous bitch cannot be saved... And neither can you."</p>
+                            <p>"We'll see about that. And when this is over, you and me got a score to settle."</p>
+                            <p>- Mengsk and Raynor confront eachother via hologram</p>
+                        </div>
+                        <div id="Menu1" class="container tab-pane fade animate__animated animate__backInUp">
+                            <br/>
+                            <h3>MENU 1</h3>
+                            <p>"Economic collapse is imminent throughout the Kel-Morian Combine.</p>
+                            <p>Korhal is a safe harbor for all who would depart that wasteland in search of a better life."</p>
+                            <p>- Arcturus Mengsk</p>
+                        </div>
+                        <div id="Menu2" class="container tab-pane fade animate__animated animate__backInUp">
+                            <br/>
+                            <h3>MENU 2</h3>
+                            <p>
+                                "Radicals and dissidents want you to ignore years of peace and prosperity at the first sound of a gunshot.
+                                They don't have the stomach to guide humanity through a galaxy fraught with danger.
+                            </p>
+                            <p>
+                                I have pacified the zerg and swept away the protoss. Now their progenitor wants to take away everything we have!
+                                Remember who is best equipped to stand in your defense!"
+                            </p>
+                            <p>
+                                - Arcturus Mengsk
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>                       
+    </body>
+</html>
+
+<!-- Register Modal -->
+<div class="modal animate__animated animate__backInDown" id="RegisterModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+  
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">REGISTER</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+  
+            <!-- Modal body -->
+            <div class="modal-body">
+            Put Registration Form Here
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal animate__animated animate__backInDown" id="LoginModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+  
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">LOGIN</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+  
+            <!-- Modal body -->
+            <div class="modal-body">
+            Put Login Form Here
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
