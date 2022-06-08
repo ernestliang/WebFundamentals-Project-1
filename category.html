@@ -52,16 +52,90 @@
 
         <div class="container-fluid animate__animated animate_backInRight p-5">
             <div class="row pt-5">
-                <div class="col">
+                <div class="col border">
                     <!-- First Column, Filled with 3 Products -->
-                    <div class="row">
-                        <div class="col">
+                    <div class="row border">
+                        <div class="col border">
                             <!-- First Product -->
-                            <div class="row">
-                                <div class="col pt-5">
+                            <div class="row border">
+                                <div class="col pt-5 border">
                                     <img src="images/Cate-Product-Cleaver.jpg" width="100px" height="auto" class="img-fluid mx-auto d-block">
                                 </div>
-                                <div class="col">
+                                <div class="col border">
+                                    <h5 class="text-center"><u>Shimasei Stainless-Steel Kitchen Cleaver</u></h5>
+                                    <hr/>
+                                    <ul class="pb-3">
+                                        <li class="text-left">
+                                            <h6>Buy now for only 29.99$!</h6>
+                                        </li>
+                                        <li class="text-left">
+                                            <h6></h6>
+                                        </li>
+                                    </ul>
+                                    <h5><input type="button" value="View More" onclick="javascript:window.location.href='product1.html'"></h5>
+                                </div>
+                            </div>
+                            <!-- Second Product -->
+                            <div class="row">
+                                <div class="col pt-5">
+                                    <img src="images/Cate-Product-Sharpener.jpg" width="100px" height="auto" class="img-fluid mx-auto d-block">
+                                </div>
+                                <div class="col pt-5">
+                                    <h6 class="text-center"><u>Gustav's Xtreme Knife Sharpener</u></h6>
+                                    <hr/>
+                                    <ul class="pb-3">
+                                        <li class="text-left">
+                                            <h6>Buy now for only 39.99$!</h6>
+                                        </li>
+                                        <li class="text-left">
+                                            <h6></h6>
+                                        </li>
+                                    </ul>
+                                    <h5><input type="button" value="View More"></h5>
+                                </div>
+                            </div>
+                            <!-- Third Product -->
+                            <div class="row">
+                                <div class="col pt-5">
+                                    <img src="images/Cate-Product-Cutlery-Set.png" width="100px" height="auto" class="img-fluid mx-auto d-block">
+                                </div>
+                                <div class="col pt-5">
+                                    <h5 class="text-center"><u>Jason&Co's Complete Cutlery Set</u></h5>
+                                    <hr/>
+                                    <ul class="pb-3">
+                                        <li class="text-left">
+                                            <h6>Buy now for only 49.99$!</h6>
+                                        </li>
+                                        <li class="text-left">
+                                            <h6></h6>
+                                        </li>
+                                    </ul>
+                                    <h5><input type="button" value="View More"></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- This is the Big Image and Title of the Category -->
+                <div class="col p-5">
+                    <h3 id="title"></h3>
+                    <h6>We boast a wide array of tools, utensils, knives and other kitchen essentials that we promise you will not regret stocking!</h6>
+                    <img src="images/Kitchen Utensils.webp" width="auto" height="200px">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid animate__animated animate_backInRight p-5">
+            <div class="row pt-5">
+                <div class="col border">
+                    <!-- First Column, Filled with 3 Products -->
+                    <div class="row border">
+                        <div class="col border">
+                            <!-- First Product -->
+                            <div class="row border">
+                                <div class="col pt-5 border">
+                                    <img src="images/Cate-Product-Cleaver.jpg" width="100px" height="auto" class="img-fluid mx-auto d-block">
+                                </div>
+                                <div class="col border">
                                     <h5 class="text-center"><u>Shimasei Stainless-Steel Kitchen Cleaver</u></h5>
                                     <hr/>
                                     <ul class="pb-3">
@@ -118,7 +192,7 @@
                 </div>
                 <!-- This is the Big Image and Title of the Category -->
                 <div class="col p-5">
-                    <h3>KITCHEN UTENSILS</h3>
+                    <h3 id="">KITCHEN UTENSILS</h3>
                     <h6>We boast a wide array of tools, utensils, knives and other kitchen essentials that we promise you will not regret stocking!</h6>
                     <img src="images/Kitchen Utensils.webp" width="auto" height="200px">
                 </div>
@@ -126,6 +200,12 @@
         </div>
     </body>
 </html>
+
+<script>
+    var selectedTitle = (window.location.search);
+    const titleArray = selectedTitle.split("=");
+    document.getElementById("title").innerHTML = titleArray[1];
+</script>
 
 <!-- Register Modal -->
 <div class="modal animate__animated animate__backInDown" id="RegisterModal">
