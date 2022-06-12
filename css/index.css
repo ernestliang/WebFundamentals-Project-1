@@ -67,3 +67,8 @@ img.crsl {
 ul li a {
   font-size:0.8em;
 }
+
+/* This is for the Navbar */
+.navbar-nav a {
+  font-size: 1em;
+}
