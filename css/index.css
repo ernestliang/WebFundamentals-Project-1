@@ -58,9 +58,9 @@ img.small {
   width:100%;
   height:250px;
 }
-img.large {
+img.crsl {
   height: auto;
-  width: 100%;
+  width: 350px;
 }
 
 /* Product Page Tabs Settings */
