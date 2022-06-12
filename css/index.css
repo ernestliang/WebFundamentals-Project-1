@@ -5,7 +5,7 @@ html {
 
 /* THIS IS ALL FOR STICKY NAV */
 body {
-  font-family: "Tahoma", "Verdana";
+  font-family: "Segoe UI", "Tahoma", "Verdana";
   font-size: 1.0em;
   padding: 5px;
 }
@@ -73,12 +73,49 @@ ul li a {
   font-size: 1em;
 }
 
-.section-header h2 {
-  font-size:48px;
+.section-header h3 {
+  font-size:43px;
   font-weight: 300;
   margin-bottom:20px;
-  color: #485664
+  color: #485664;
+  text-decoration: underline;
 }
+
+.thumbnail a img {
+  transform: scale(0.8);
+}
+
+.thumbnail .title {
+  color:darkblue;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.thumbnail .addOn {
+  font-size: 1.0em;
+  font-weight: 400;
+}
+
+.aboutUs {
+  text-align: center;
+}
+
+.aboutUs .main {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.aboutUs .subHeader {
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.aboutUs p {
+  font-weight: 300;
+}
+
+
+
 
 /* .section-header p {
   margin: 0;
