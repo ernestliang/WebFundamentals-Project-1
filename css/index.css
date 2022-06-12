@@ -5,7 +5,7 @@ html {
 
 /* THIS IS ALL FOR STICKY NAV */
 body {
-  font-family: "Segoe UI" ,"Tahoma", "Verdana";
+  font-family: "Tahoma", "Verdana";
   font-size: 1.0em;
   padding: 5px;
 }
@@ -72,3 +72,15 @@ ul li a {
 .navbar-nav a {
   font-size: 1em;
 }
+
+.section-header h2 {
+  font-size:48px;
+  font-weight: 300;
+  margin-bottom:20px;
+  color: #485664
+}
+
+/* .section-header p {
+  margin: 0;
+  color: #8f9fae;
+} */
