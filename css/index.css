@@ -114,7 +114,16 @@ ul li a {
   font-weight: 300;
 }
 
-
+/* Category Menu */
+.collection-menu .nav a {
+  border: 1px solid #ddd;
+  margin-bottom: -1px;
+  line-height: 58px;
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  color: #777;
+}
 
 
 /* .section-header p {
