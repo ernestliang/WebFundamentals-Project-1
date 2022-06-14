@@ -125,6 +125,15 @@ ul li a {
   color: #777;
 }
 
+.collection-menu p {
+  border: 1px solid #ddd;
+  margin-bottom: -1px;
+  line-height: 55px;
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  color: #777;
+}
 
 /* .section-header p {
   margin: 0;
