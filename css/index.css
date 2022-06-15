@@ -87,12 +87,12 @@ ul li a {
 
 .thumbnail .title {
   color:darkblue;
-  font-size: 1.3em;
+  font-size: 1.5em;
   font-weight: 600;
 }
 
 .thumbnail .addOn {
-  font-size: 1.0em;
+  font-size: 1.3em;
   font-weight: 400;
 }
 
@@ -135,7 +135,28 @@ ul li a {
   color: #777;
 }
 
-/* .section-header p {
-  margin: 0;
-  color: #8f9fae;
-} */
+/* This is all going to be for the Product Page */
+.productTitle {
+  color:darkblue;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+.productTabTitle {
+  font-size: 2.0em;
+  font-weight: 500;
+}
+
+.hand:hover {
+  cursor: pointer;
+}
+
+/* This is for the Register Modal */
+.modalTitle {
+  font-size: 1.6em;
+  font-weight: 500;
+}
+
+.modalSubText {
+  font-size: 1.3em;
+  font-weight: 400;
+}
