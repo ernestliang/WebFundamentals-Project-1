@@ -15,3 +15,7 @@ function getPrdFrmCat(category) {
     ele1.href = 'ProductPage.html?id=' + products[0].ID;
     ele2.href = 'ProductPage.html?id=' + products[1].ID;
 }
+
+function changeHREF() {
+    
+}
