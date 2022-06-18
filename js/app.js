@@ -42,8 +42,8 @@ function getDiscountProducts() {
     debugger;
     // Solving the Href's
     document.getElementById("discHref1").href = "ProductPage.html?id=" + discProducts[0].ID;
-    // document.getElementById("discHref2").href = "ProductPage.html?id=" + discProducts[1].ID;
-    // document.getElementById("discHref3").href = "ProductPage.html?id=" + discProducts[2].ID;
+    document.getElementById("discHref2").href = "ProductPage.html?id=" + discProducts[1].ID;
+    document.getElementById("discHref3").href = "ProductPage.html?id=" + discProducts[2].ID;
 
     // Solving the Prices
     document.getElementById("discImg1").src = discProducts[0].img;
