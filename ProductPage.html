@@ -29,27 +29,27 @@
                 <div class="navbar-nav ml-auto">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#Category">
+                            <a class="nav-link" href="Landing.html/#Category">
                                 Categories
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#NewArrivals">
+                            <a class="nav-link" href="Landing.html/#NewArrivals">
                                 Hot Deals
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#AboutUs">
+                            <a class="nav-link" href="Landing.html/#AboutUs">
                                 About Us
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#Achieve">
+                            <a class="nav-link" href="Landing.html/#Achieve">
                                 Achievements
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#Founders">
+                            <a class="nav-link" href="Landing.html/#Founders">
                                 Founders
                             </a>
                         </li>
@@ -81,20 +81,17 @@
             <div class="row p-3">
                 <!-- This is the Picture of the Product -->
                 <div class="col-12 col-md-4 col-lg-4 wow animate__animated animate__bounceIn">
-                    <img id="prdImg" width="400px" height="400px">
+                    <img id="prdImg" width="400px" height="auto">
                 </div>
                 <!-- This is the Main Body of the Product Page -->
                 <div class="col-12 col-md-8 col-lg-8">
                     <!-- Tab Top Selection -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#home">benefits</a>
+                            <a class="nav-link active" data-toggle="tab" href="#home">Description</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#Menu1">ingredients</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#Menu2">testimonials</a>
+                            <a class="nav-link" data-toggle="tab" href="#Menu1">Reviews</a>
                         </li>
                     </ul>
                     <!-- Tab Content -->
@@ -105,25 +102,7 @@
                         </div>
                         <div id="Menu1" class="container tab-pane fade animate__animated animate__backInUp">
                             <br/>
-                            <h3>MENU 1</h3>
-                            <p>"Economic collapse is imminent throughout the Kel-Morian Combine.</p>
-                            <p>Korhal is a safe harbor for all who would depart that wasteland in search of a better life."</p>
-                            <p>- Arcturus Mengsk</p>
-                        </div>
-                        <div id="Menu2" class="container tab-pane fade animate__animated animate__backInUp">
-                            <br/>
-                            <h3>MENU 2</h3>
-                            <p>
-                                "Radicals and dissidents want you to ignore years of peace and prosperity at the first sound of a gunshot.
-                                They don't have the stomach to guide humanity through a galaxy fraught with danger.
-                            </p>
-                            <p>
-                                I have pacified the zerg and swept away the protoss. Now their progenitor wants to take away everything we have!
-                                Remember who is best equipped to stand in your defense!"
-                            </p>
-                            <p>
-                                - Arcturus Mengsk
-                            </p>
+                            <p id="prdRev"></p>
                         </div>
                     </div>
                 </div>
@@ -144,6 +123,7 @@
     document.getElementById("prdName").innerHTML = product.productName;
     document.getElementById("prdImg").src = product.img;
     document.getElementById("prdDesc").innerHTML = product.description;
+    document.getElementById("prdRev").innerHTML = product.review;
 </script>
 
 <!-- Register Modal -->
