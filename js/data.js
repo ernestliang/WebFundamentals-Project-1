@@ -56,4 +56,5 @@ const ProductsArray = [
     {ID: 11, productName: "Grandiose Perak Keris Letter Opener", categID: 5, img:"images/Discounts/LetterOpener.jpg",               price:0, description: Desc12, type: 2, review: Rev12},
     {ID: 12, productName: "FlexSaw Heavy Duty Hacksaw",          categID: 5, img:"images/Discounts/Saw.jpg",                        price:0, description: Desc13, type: 2, review: Rev13},
     {ID: 13, productName: "Succital Quiet Vacuum Cleaner",       categID: 5, img:"images/Discounts/Vacuum.jpg",                     price:0, description: Desc14, type: 2, review: Rev14}
-]
+];
+

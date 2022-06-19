@@ -198,7 +198,7 @@
                             <div class="card-body">
                                 <h4 class="card-text title">Fixd® All Purpose Toolbox</h4>
                                 <p id="newPrice3" class="addOn"></p>
-                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="card-link">View Details</a>
+                                <a href="" id="newHref3" class="card-link">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -391,10 +391,18 @@
     // This is for Wow.js
     new WOW().init();
 
+    var product = ProductsArray[1];
+
+    ShopCart.addProducts(product);
+
+    ShopCart.removeProducts(1);
+
     document.addEventListener("DOMContentLoaded", e => {
         
         getNewArrivalProducts();
         getDiscountProducts();
+
+        getPrdFrmCat(0);
 
     })
 </script>

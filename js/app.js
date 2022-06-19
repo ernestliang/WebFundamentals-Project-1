@@ -55,3 +55,26 @@ function getDiscountProducts() {
     document.getElementById("discPrice2").innerHTML = "Now going for " + discProducts[1].price + "$";
     document.getElementById("discPrice3").innerHTML = "Now going for " + discProducts[2].price + "$";
 }
+
+// CART OBJECTS AND ARRAYS
+const ShopCart = {
+    totalQuantity: 0,
+    totalPrice: 0,
+    productList: [],
+
+    addProducts: function(product) {
+        debugger;
+        this.productList.push(product);
+    },
+    removeProducts: function(y){
+        debugger;
+        var rmvIndex = this.productList.findIndex(x => x.ID == y);
+
+        if(rmvIndex >= 0){
+            this.productList.splice(rmvIndex, 1);
+        }
+    },
+    clearProducts: function() {
+        this.productList = [];
+    }
+};
