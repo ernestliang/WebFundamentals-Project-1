@@ -160,3 +160,9 @@ ul li a {
   font-size: 1.3em;
   font-weight: 400;
 }
+
+/* Highlighted Categories */
+div .activeCat {
+  background-color: blue;
+  color: white;
+}

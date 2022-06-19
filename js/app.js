@@ -14,6 +14,34 @@ function getPrdFrmCat(category) {
 
     ele1.href = 'ProductPage.html?id=' + products[0].ID;
     ele2.href = 'ProductPage.html?id=' + products[1].ID;
+
+    // --> Giving Categories BG Color
+
+    // Obtaining related DOM elements
+    var select0 = document.getElementById("cat0");
+    var select1 = document.getElementById("cat1");
+    var select2 = document.getElementById("cat2");
+    var select3 = document.getElementById("cat3");
+
+    // Resetting to Defaults
+    select0.classList.remove('activeCat');
+    select1.classList.remove('activeCat');
+    select2.classList.remove('activeCat');
+    select3.classList.remove('activeCat');
+
+    // Finding the selected Category
+    if(category == 0) {
+        select0.classList.add('activeCat');
+    }
+    else if(category == 1) {
+        select1.classList.add('activeCat');
+    }
+    else if(category == 2) {
+        select2.classList.add('activeCat');
+    }
+    else if(category == 3) {
+        select3.classList.add('activeCat');
+    }
 }
 
 function getNewArrivalProducts() {
@@ -57,27 +85,27 @@ function getDiscountProducts() {
 }
 
 // CART OBJECTS AND ARRAYS
-const ShopCart = {
-    totalQuantity: 0,
-    totalPrice: 0,
-    productList: [],
+// const ShopCart = {
+//     totalQuantity: 0,
+//     totalPrice: 0,
+//     productList: [],
 
-    addProducts: function(product) {
-        debugger;
-        var chosenProduct = ProductsArray[n];
-        this.productList.push(chosenProduct);
-        this.totalQuantity = this.productList.length;
-        alert(this.totalQuantity);
-    },
-    removeProducts: function(y){
-        debugger;
-        var rmvIndex = this.productList.findIndex(x => x.ID == y);
+//     addProducts: function(product) {
+//         debugger;
+//         var chosenProduct = ProductsArray[n];
+//         this.productList.push(chosenProduct);
+//         this.totalQuantity = this.productList.length;
+//         alert(this.totalQuantity);
+//     },
+//     removeProducts: function(y){
+//         debugger;
+//         var rmvIndex = this.productList.findIndex(x => x.ID == y);
 
-        if(rmvIndex >= 0){
-            this.productList.splice(rmvIndex, 1);
-        }
-    },
-    clearProducts: function() {
-        this.productList = [];
-    }
-};
+//         if(rmvIndex >= 0){
+//             this.productList.splice(rmvIndex, 1);
+//         }
+//     },
+//     clearProducts: function() {
+//         this.productList = [];
+//     }
+// };

@@ -115,22 +115,22 @@
                         <div class="nav flex-column" id="v-pills-tab">
                             <div class="row">
                                 <div onclick="getPrdFrmCat(0)" class="col-12 selection hand">
-                                    <p>Electronics</p>
+                                    <p id="cat0" class="">Electronics</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div onclick="getPrdFrmCat(1)" class="col-12 selection hand">
-                                    <p>Tools</p>
+                                    <p id="cat1" class="">Tools</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div onclick="getPrdFrmCat(2)" class="col-12 selection hand">
-                                    <p>Accessories</p>
+                                    <p id="cat2" class="">Accessories</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div onclick="getPrdFrmCat(3)" class="col-12 selection hand">
-                                    <p>Bags</p>
+                                    <p id="cat3" class="">Bags</p>
                                 </div>
                             </div>
                         </div>          
@@ -270,8 +270,8 @@
                     <h3 class="text-center pb-2 wow animate__animated animate__backInLeft">About Us</h3>
                     <p class="text-center p-5 wow animate__animated animate__backInLeft animate__delay-1s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                 </div>
-                <div class="col-12 col-md-4 p-3 wow animate__animated animate__fadeIn animate__delay-2s">
-                    <img src="images/aboutus.jpg" height="auto" width="500px" class="pr-5 pt-5">
+                <div class="col-12 col-md-4 p-3 wow animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="images/aboutus.jpg" height="auto" width="100%">
                 </div>
             </div>
         </div>
@@ -376,7 +376,12 @@
                     <!-- Second Big Column -->
                     <div class="row">
                         <div class="col">
-
+                            <h5>Our E-mail adressess:</h5>
+                            <ul class="mx-auto">
+                                <li><h6>011-111 1111</h6></li>
+                                <li><h6>022-222 2222</h6></li>
+                                <li><h6>033-333 3333</h6></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -388,16 +393,12 @@
     // This is for Wow.js
     new WOW().init();
 
-    var product = ProductsArray[1];
-
-    ShopCart.addProducts(product);
-
-    ShopCart.removeProducts(1);
-
     document.addEventListener("DOMContentLoaded", e => {
         
         getNewArrivalProducts();
         getDiscountProducts();
+
+        debugger;
 
         getPrdFrmCat(0);
 
