@@ -85,27 +85,48 @@ function getDiscountProducts() {
 }
 
 // CART OBJECTS AND ARRAYS
-// const ShopCart = {
-//     totalQuantity: 0,
-//     totalPrice: 0,
-//     productList: [],
+const ShopCart = {
+    totalPrice: 0,
+    productList: [],
 
-//     addProducts: function(product) {
-//         debugger;
-//         var chosenProduct = ProductsArray[n];
-//         this.productList.push(chosenProduct);
-//         this.totalQuantity = this.productList.length;
-//         alert(this.totalQuantity);
-//     },
-//     removeProducts: function(y){
-//         debugger;
-//         var rmvIndex = this.productList.findIndex(x => x.ID == y);
 
-//         if(rmvIndex >= 0){
-//             this.productList.splice(rmvIndex, 1);
-//         }
-//     },
-//     clearProducts: function() {
-//         this.productList = [];
-//     }
-// };
+    totalQuantity: function() {
+        debugger;
+        var totQty = 0;
+        for (var i=0; i<this.productList.length; i++){
+            totQty += this.productList[i].qty;
+            
+        }
+        return totQty;
+    },
+    totalPrice: function (){
+        var totPrice = 0;
+        for (var i=0; i<this.productList.length; i++){
+            totPrice += this.productList[i].price*this.productList[i].qty;
+            
+        }
+        return totPrice;
+    },
+    addProducts: function(product) {
+        debugger;
+        var existProduct = this.productList.find (x => x.ID == product.ID);
+        if (!existProduct) {
+            product.qty += 1;
+            this.productList.push(product);
+        }
+        else {
+            existProduct.qty += 1;
+        }
+    },
+    removeProducts: function(y){
+        debugger;
+        var rmvIndex = this.productList.findIndex(x => x.ID == y);
+
+        if(rmvIndex >= 0){
+            this.productList.splice(rmvIndex, 1);
+        }
+    },
+    clearProducts: function() {
+        this.productList = [];
+    }
+};

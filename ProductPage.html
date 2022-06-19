@@ -11,6 +11,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/wow.min.js"></script>
+        <script src="js/app.js"></script>
         <script src="js/data.js"></script>
     </head>
     <body class="p-5 container-fluid">
@@ -77,7 +78,7 @@
             <p class="productTitle p-5 text-center" id="prdName"></p>
         </div>
         <!-- This is the main body of the product page -->
-        <div class="container-md p-5">
+        <div class="container-md pt-5">
             <div class="row p-3">
                 <!-- This is the Picture of the Product -->
                 <div class="col-12 col-md-4 col-lg-4 wow animate__animated animate__bounceIn">
@@ -111,7 +112,7 @@
             <!-- These are the buttons to add to cart -->
             <div class="row pt-2 pl-4">
                 <div class="col" colspan="2">
-                    <input type="button" value="Add to Cart" onclick="callAdd(n)">
+                    <input type="button" value="Add to Cart" onclick="callAdd()">
                 </div>
             </div>
         </div>
@@ -124,9 +125,7 @@
 
     var productID = window.location.search;
     productID = productID.split("=")[1];
-    debugger; 
-
-    var n = window.location.href.split("=")[1];
+    debugger;
     
 
     var product = ProductsArray.find(x => x.ID == productID);
@@ -135,18 +134,10 @@
     document.getElementById("prdDesc").innerHTML = product.description;
     document.getElementById("prdRev").innerHTML = product.review;
 
-    function callAdd(n) {
-        ShopCart.addProducts(n);
+    function callAdd() {
+        ShopCart.addProducts(product);
     }
 
-    document.addEventListener("DOMContentLoaded", e => {
-        
-        getNewArrivalProducts();
-        getDiscountProducts();
-
-        getPrdFrmCat(0);
-
-    })
 </script>
 
 <!-- Login Modal -->
