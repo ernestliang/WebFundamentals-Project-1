@@ -62,7 +62,7 @@
                         </div>
                     </a>
                     &nbsp;&nbsp;
-                    <a href="#">
+                    <a href="Cart.html">
                         <i class="fas fa-shopping-cart fa-md"></i>
                         <div class="text-center">
                             <span>Cart</span>
@@ -111,7 +111,7 @@
             <!-- These are the buttons to add to cart -->
             <div class="row pt-2 pl-4">
                 <div class="col" colspan="2">
-                    <input type="button" value="Add to Cart" onclick="">
+                    <input type="button" value="Add to Cart" onclick="callAdd(n)">
                 </div>
             </div>
         </div>
@@ -126,11 +126,27 @@
     productID = productID.split("=")[1];
     debugger; 
 
+    var n = window.location.href.split("=")[1];
+    
+
     var product = ProductsArray.find(x => x.ID == productID);
     document.getElementById("prdName").innerHTML = product.productName;
     document.getElementById("prdImg").src = product.img;
     document.getElementById("prdDesc").innerHTML = product.description;
     document.getElementById("prdRev").innerHTML = product.review;
+
+    function callAdd(n) {
+        ShopCart.addProducts(n);
+    }
+
+    document.addEventListener("DOMContentLoaded", e => {
+        
+        getNewArrivalProducts();
+        getDiscountProducts();
+
+        getPrdFrmCat(0);
+
+    })
 </script>
 
 <!-- Login Modal -->
@@ -138,20 +154,20 @@
     <div class="modal-dialog">
         <div class="modal-content">
   
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">LOGIN</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-  
             <!-- Modal body -->
             <div class="modal-body">
-            Put Login Form Here
+                <h2 class="text-center">LOGIN</h2>
+                <hr/>
+                <input type="text" class="text-center" style="margin:auto; display:block" placeholder="Username/E-mail">
+                <br/>
+                <input type="text" class="text-center" style="margin:auto; display:block" placeholder="Password">
+                <hr/>
+                <input type="button" class="text-center" style="margin:auto; display:block" value="Login" onclick="">
             </div>
     
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger text-center" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

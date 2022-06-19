@@ -64,7 +64,10 @@ const ShopCart = {
 
     addProducts: function(product) {
         debugger;
-        this.productList.push(product);
+        var chosenProduct = ProductsArray[n];
+        this.productList.push(chosenProduct);
+        this.totalQuantity = this.productList.length;
+        alert(this.totalQuantity);
     },
     removeProducts: function(y){
         debugger;
