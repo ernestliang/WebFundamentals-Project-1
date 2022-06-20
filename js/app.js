@@ -85,6 +85,10 @@ function getDiscountProducts() {
 }
 
 // CART OBJECTS AND ARRAYS
+
+var grabArray;
+var pushArray;
+
 const ShopCart = {
     totalPrice: 0,
     productList: [],
@@ -113,9 +117,12 @@ const ShopCart = {
         if (!existProduct) {
             product.qty += 1;
             this.productList.push(product);
+            grabArray = window.sessionStorage.getItem("pullMe", this.productList);
+            pushArray = window.sessionStorage.setItem("pullMe", this.productList);
         }
         else {
             existProduct.qty += 1;
+            storageArray = window.sessionStorage.setItem("pullMe", JSON.stringify(this.productList));
         }
     },
     removeProducts: function(y){
@@ -124,6 +131,7 @@ const ShopCart = {
 
         if(rmvIndex >= 0){
             this.productList.splice(rmvIndex, 1);
+            storageArray = window.sessionStorage.setItem("pullMe", JSON.stringify(this.productList));
         }
     },
     clearProducts: function() {
