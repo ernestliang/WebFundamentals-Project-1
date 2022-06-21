@@ -86,13 +86,10 @@ function getDiscountProducts() {
 
 // CART OBJECTS AND ARRAYS
 
-var grabArray;
-var pushArray;
 
 const ShopCart = {
     totalPrice: 0,
     productList: [],
-
 
     totalQuantity: function() {
         debugger;
@@ -110,20 +107,34 @@ const ShopCart = {
             
         }
         return totPrice;
+
+        // Alternate Method using "Reduce"
+        // const total = items.reduce((currentTotal, item) => {
+        //     return item.price + currentTotal
+        // }, 0 );
     },
     addProducts: function(product) {
+
         debugger;
-        var existProduct = this.productList.find (x => x.ID == product.ID);
+        // Step 1: Check whether the S.Storage exists
+        var sessionProductArray = window.sessionStorage.getItem("pullme");
+        // Step 1.a: If the S.Storage does exist:
+        // IMPORTANT: REPLACE CURRENT PRODUCT LIST WITH THE LATEST ONE FROM STORAGE
+        if (sessionProductArray != null){
+            this.productList = JSON.parse(sessionProductArray);
+        }
+
+        // Checking whether a copy exists
+        var existProduct = this.productList.find(x => x.ID == product.ID);
         if (!existProduct) {
             product.qty += 1;
             this.productList.push(product);
-            grabArray = window.sessionStorage.getItem("pullMe", this.productList);
-            pushArray = window.sessionStorage.setItem("pullMe", this.productList);
         }
         else {
             existProduct.qty += 1;
-            storageArray = window.sessionStorage.setItem("pullMe", JSON.stringify(this.productList));
         }
+
+        window.sessionStorage.setItem("pullme", JSON.stringify(this.productList));
     },
     removeProducts: function(y){
         debugger;

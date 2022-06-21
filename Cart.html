@@ -28,7 +28,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar" style="vertical-align: middle;">
+            <div class="collapse navbar-collapse"  id="collapsibleNavbar" style="vertical-align: middle;">
                 <!-- This section is hugging the right side -->
                 <div class="navbar-nav ml-auto">
                     <ul class="navbar-nav mr-auto">
@@ -76,7 +76,22 @@
             </div>
         </nav>
 
+        <br/>
+
         <h1 class="text-center p-5">Shopping Cart</h1>
+
+        <!-- Main Table Body -->
+        <div class="row p-4" id="">
+            <!-- First Column displaying Information -->
+            <div class="col-6" id="infoDisplay">
+
+            </div>
+            <!-- Second Column displaying Price -->
+            <div class="col-6" id="priceDisplay">
+
+            </div>
+        </div>
+        
     </body>
 </html>
 <script>
@@ -91,6 +106,12 @@
         getPrdFrmCat(0);
 
     })
+
+    // Loop to create more rows
+    for (var i=0; i<ShopCart.productList.length; i++) {
+        
+    }
+
 </script>
 
 <!-- Login Modal -->
