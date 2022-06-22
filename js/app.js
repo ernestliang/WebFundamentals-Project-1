@@ -153,7 +153,9 @@ const ShopCart = {
 };
 
 function populateCheckout () {
-    debugger;
+    // clear div content before redrawing
+    var divProductList = document.getElementById("productDisplay").innerHTML = "";
+
     // Pull the array from Storage
     var checkoutPull = window.sessionStorage.getItem("pullme");
 
@@ -165,13 +167,8 @@ function populateCheckout () {
     var elemDisplayProduct = document.getElementById('productDisplay');
 
     // Loop to add the rows and their contents
-    debugger;
     if(checkoutArray) {
         for (var i=0; i<checkoutArray.length; i++) {
-
-
-            debugger;
-
             // This creates a new row
             const newrow = document.createElement("div");
             newrow.classList.add("row");
@@ -232,28 +229,15 @@ function populateCheckout () {
         var finalQty = document.getElementById("totalQty");
         finalQty.innerHTML = "Total Quantity: " + ShopCart.totalQuantity();
     }
-
-    
-            // delButton.addEventListener("click", function(e){
-            //     debugger;
-
-            //     var findDeleted = JSON.parse(window.sessionStorage.getItem("pullme"));
-            //     debugger;
-            //     findDeleted.splice(i, 1);
-            //     window.sessionStorage.setItem("pullme", JSON.stringify(findDeleted));
-            // })
-
-
 };
 
 function removeProduct(productId) {
     var productList = JSON.parse(window.sessionStorage.getItem("pullme"));
     debugger;
     var indexToDelete = productList.findIndex(x => x.ID == productId);
-    if(indexToDelete > 0) {
+    if(indexToDelete >= 0) {
         productList.splice(indexToDelete, 1);
         window.sessionStorage.setItem("pullme", JSON.stringify(productList));   
-        clearCart();
         populateCheckout(); 
     }
 }
