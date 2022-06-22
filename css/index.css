@@ -166,3 +166,9 @@ div .activeCat {
   background-color: blue;
   color: white;
 }
+
+/* Cart Stuff  */
+.cartImg {
+  width: 300px;
+  height: auto;
+}

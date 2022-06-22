@@ -92,6 +92,7 @@ const ShopCart = {
     productList: [],
 
     totalQuantity: function() {
+
         debugger;
         var totQty = 0;
         for (var i=0; i<this.productList.length; i++){
@@ -101,6 +102,7 @@ const ShopCart = {
         return totQty;
     },
     totalPrice: function (){
+        debugger;
         var totPrice = 0;
         for (var i=0; i<this.productList.length; i++){
             totPrice += this.productList[i].price*this.productList[i].qty;
@@ -148,4 +150,105 @@ const ShopCart = {
     clearProducts: function() {
         this.productList = [];
     }
+};
+
+function populateCheckout () {
+    debugger;
+    // Pull the array from Storage
+    var checkoutPull = window.sessionStorage.getItem("pullme");
+
+    // Parse it to make it an interpretable array
+    var checkoutArray = JSON.parse(checkoutPull);
+    ShopCart.productList = checkoutArray;
+
+    // Get the DOM element to place the stuff from the cart in
+    var elemDisplayProduct = document.getElementById('productDisplay');
+
+    // Loop to add the rows and their contents
+    debugger;
+    if(checkoutArray) {
+        for (var i=0; i<checkoutArray.length; i++) {
+
+            // This creates a new row
+            const newrow = document.createElement("div");
+            newrow.classList.add("row");
+    
+            // This creates a new col to put within he row
+            const descCol = document.createElement("div");
+            descCol.classList.add("col-12", "col-md-7", "col-lg-7", "p-4", "border");
+    
+            // This creates a special image row
+            const imgCol = document.createElement("div");
+            imgCol.classList.add("col-5", "border", "text-center", "d-none", "d-sm-block", "d-sm-none", "d-md-block");
+    
+            var firstProduct = checkoutArray[i];
+            debugger;
+    
+            // Looking though and checking the name
+            var objName = document.createElement("h5");
+            objName.innerHTML = "Product: " + firstProduct.productName;
+            descCol.appendChild(objName);
+    
+            // Looking through and checking the price
+            var objPrice = document.createElement("h6");
+            objPrice.innerHTML = "Price: " + firstProduct.price;
+            descCol.appendChild(objPrice);
+    
+            // Looking through and checking the quantity
+            var objQty = document.createElement("h6");
+            objQty.innerHTML = "Quantity: " + firstProduct.qty;
+            descCol.appendChild(objQty);
+    
+            // Looking through and checking the Total price
+            var objTotalPrice = document.createElement("h6");
+            objTotalPrice.innerHTML = "Total Price: " + ((firstProduct.price)*(firstProduct.qty));
+            descCol.appendChild(objTotalPrice);
+    
+            // Looking through and creating the delete button
+            var delButton = document.createElement("button");
+            delButton.innerHTML = "Remove Product";
+            delButton.addEventListener("click", function(){
+
+                var findDeleted = window.sessionStorage.getItem("pullme");
+                findDeleted.splice(i, 1);
+                window.sessionStorage.setItem("pullme", findDeleted);
+                console.log(findDeleted);
+                document.getElementById("productDisplay").innerHTML = "";
+                populateCheckout();
+
+
+
+                // document.getElementById("productDisplay").innerHTML = "";
+                // var finalPrice = document.getElementById("totalPrice");
+                // finalPrice.innerHTML = "Total Price: 0$";
+                // var finalQty = document.getElementById("totalQty");
+                // finalQty.innerHTML = "Total Quantity: 0";
+
+            })
+            descCol.appendChild(delButton);
+
+            // Looking through and checking the image
+            var objImg = document.createElement("img");
+            objImg.src = firstProduct.img;
+            objImg.classList.add("cartImg");
+            imgCol.appendChild(objImg);
+    
+
+            // Appending everything so they show up in the page
+            newrow.appendChild(descCol);
+            newrow.appendChild(imgCol);
+            elemDisplayProduct.append(newrow);
+    
+        }
+    
+        var finalPrice = document.getElementById("totalPrice");
+        finalPrice.innerHTML = "Total Price: " + ShopCart.totalPrice() + "$";
+        var finalQty = document.getElementById("totalQty");
+        finalQty.innerHTML = "Total Quantity: " + ShopCart.totalQuantity();
+    }
+
+    
+
+
+
 };
