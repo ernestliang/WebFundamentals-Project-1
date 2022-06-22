@@ -87,70 +87,6 @@ function getDiscountProducts() {
 // CART OBJECTS AND ARRAYS
 
 
-const ShopCart = {
-    totalPrice: 0,
-    productList: [],
-
-    totalQuantity: function() {
-
-        debugger;
-        var totQty = 0;
-        for (var i=0; i<this.productList.length; i++){
-            totQty += this.productList[i].qty;
-            
-        }
-        return totQty;
-    },
-    totalPrice: function (){
-        debugger;
-        var totPrice = 0;
-        for (var i=0; i<this.productList.length; i++){
-            totPrice += this.productList[i].price*this.productList[i].qty;
-            
-        }
-        return totPrice;
-
-        // Alternate Method using "Reduce"
-        // const total = items.reduce((currentTotal, item) => {
-        //     return item.price + currentTotal
-        // }, 0 );
-    },
-    addProducts: function(product) {
-
-        debugger;
-        // Step 1: Check whether the S.Storage exists
-        var sessionProductArray = window.sessionStorage.getItem("pullme");
-        // Step 1.a: If the S.Storage does exist:
-        // IMPORTANT: REPLACE CURRENT PRODUCT LIST WITH THE LATEST ONE FROM STORAGE
-        if (sessionProductArray != null){
-            this.productList = JSON.parse(sessionProductArray);
-        }
-
-        // Checking whether a copy exists
-        var existProduct = this.productList.find(x => x.ID == product.ID);
-        if (!existProduct) {
-            product.qty += 1;
-            this.productList.push(product);
-        }
-        else {
-            existProduct.qty += 1;
-        }
-
-        window.sessionStorage.setItem("pullme", JSON.stringify(this.productList));
-    },
-    removeProducts: function(y){
-        debugger;
-        var rmvIndex = this.productList.findIndex(x => x.ID == y);
-
-        if(rmvIndex >= 0){
-            this.productList.splice(rmvIndex, 1);
-            storageArray = window.sessionStorage.setItem("pullMe", JSON.stringify(this.productList));
-        }
-    },
-    clearProducts: function() {
-        this.productList = [];
-    }
-};
 
 function populateCheckout () {
     // clear div content before redrawing
@@ -161,7 +97,6 @@ function populateCheckout () {
 
     // Parse it to make it an interpretable array
     var checkoutArray = JSON.parse(checkoutPull);
-    ShopCart.productList = checkoutArray;
 
     // Get the DOM element to place the stuff from the cart in
     var elemDisplayProduct = document.getElementById('productDisplay');
@@ -225,11 +160,33 @@ function populateCheckout () {
         }
     
         var finalPrice = document.getElementById("totalPrice");
-        finalPrice.innerHTML = "Total Price: " + ShopCart.totalPrice() + "$";
+        finalPrice.innerHTML = "Total Price: " + getTotalPrice() + "$";
         var finalQty = document.getElementById("totalQty");
-        finalQty.innerHTML = "Total Quantity: " + ShopCart.totalQuantity();
+        finalQty.innerHTML = "Total Quantity: " + getTotalQuantity();
     }
 };
+
+function addProduct(product){
+    debugger;
+    // Step 1: Check whether the S.Storage exists
+    var sessionProductArray = JSON.parse(window.sessionStorage.getItem("pullme"));
+    if (sessionProductArray == null) {
+        sessionProductArray = [];
+    }
+   
+
+    // Checking whether a copy exists
+    var existProduct = sessionProductArray.find(x => x.ID == product.ID);
+    if (!existProduct) {
+        product.qty += 1;
+        sessionProductArray.push(product);
+    }
+    else {
+        existProduct.qty += 1;
+    }
+
+    window.sessionStorage.setItem("pullme", JSON.stringify(sessionProductArray));
+}
 
 function removeProduct(productId) {
     var productList = JSON.parse(window.sessionStorage.getItem("pullme"));
@@ -243,7 +200,7 @@ function removeProduct(productId) {
 }
 
 // This function is to clear the cart and the page`
-function clearCart() {
+function clearProducts() {
         window.sessionStorage.removeItem("pullme");
         document.getElementById("productDisplay").innerHTML = "";
         var finalPrice = document.getElementById("totalPrice");
@@ -251,4 +208,22 @@ function clearCart() {
         var finalQty = document.getElementById("totalQty");
         finalQty.innerHTML = "Total Quantity: 0";
 
+};
+
+function getTotalQuantity(){
+    let totalQty = 0;
+    var getQty = JSON.parse(window.sessionStorage.getItem("pullme"));
+    for (var i=0; i<getQty.length; i++){
+        totalQty += getQty[i].qty;
+    }
+    return totalQty;
+};
+
+function getTotalPrice(){
+    let totalPrice = 0;
+    var getPrice = JSON.parse(window.sessionStorage.getItem("pullme"));
+    for (var i=0; i<getPrice.length; i++){
+        totalPrice += ((getPrice[i].price)*(getPrice[i].qty));
+    }
+    return totalPrice;
 };
