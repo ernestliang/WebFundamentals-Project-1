@@ -169,6 +169,9 @@ function populateCheckout () {
     if(checkoutArray) {
         for (var i=0; i<checkoutArray.length; i++) {
 
+
+            debugger;
+
             // This creates a new row
             const newrow = document.createElement("div");
             newrow.classList.add("row");
@@ -207,24 +210,7 @@ function populateCheckout () {
             // Looking through and creating the delete button
             var delButton = document.createElement("button");
             delButton.innerHTML = "Remove Product";
-            delButton.addEventListener("click", function(){
-
-                var findDeleted = window.sessionStorage.getItem("pullme");
-                findDeleted.splice(i, 1);
-                window.sessionStorage.setItem("pullme", findDeleted);
-                console.log(findDeleted);
-                document.getElementById("productDisplay").innerHTML = "";
-                populateCheckout();
-
-
-
-                // document.getElementById("productDisplay").innerHTML = "";
-                // var finalPrice = document.getElementById("totalPrice");
-                // finalPrice.innerHTML = "Total Price: 0$";
-                // var finalQty = document.getElementById("totalQty");
-                // finalQty.innerHTML = "Total Quantity: 0";
-
-            })
+            delButton.setAttribute('onclick', "removeProduct(" + firstProduct.ID + ")")
             descCol.appendChild(delButton);
 
             // Looking through and checking the image
@@ -248,7 +234,37 @@ function populateCheckout () {
     }
 
     
+            // delButton.addEventListener("click", function(e){
+            //     debugger;
+
+            //     var findDeleted = JSON.parse(window.sessionStorage.getItem("pullme"));
+            //     debugger;
+            //     findDeleted.splice(i, 1);
+            //     window.sessionStorage.setItem("pullme", JSON.stringify(findDeleted));
+            // })
 
 
+};
+
+function removeProduct(productId) {
+    var productList = JSON.parse(window.sessionStorage.getItem("pullme"));
+    debugger;
+    var indexToDelete = productList.findIndex(x => x.ID == productId);
+    if(indexToDelete > 0) {
+        productList.splice(indexToDelete, 1);
+        window.sessionStorage.setItem("pullme", JSON.stringify(productList));   
+        clearCart();
+        populateCheckout(); 
+    }
+}
+
+// This function is to clear the cart and the page`
+function clearCart() {
+        window.sessionStorage.removeItem("pullme");
+        document.getElementById("productDisplay").innerHTML = "";
+        var finalPrice = document.getElementById("totalPrice");
+        finalPrice.innerHTML = "Total Price: 0$";
+        var finalQty = document.getElementById("totalQty");
+        finalQty.innerHTML = "Total Quantity: 0";
 
 };
