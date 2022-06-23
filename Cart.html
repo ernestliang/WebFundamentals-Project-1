@@ -141,7 +141,12 @@
     }); 
 
     function letThemKnow() {
-        swal("Purchase Successful!", "We hope you come to shop with us again!", "success");
+        if (totalQty = 0){
+            swal({icon:"error"}, "Please add a Product before continuing.")
+        }
+        else {
+            swal("Purchase Successful!", "We hope you come to shop with us again!", "success");
+        }
     }
 
 </script>
