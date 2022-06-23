@@ -10,6 +10,7 @@
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="js/wow.min.js"></script>
         <script src="js/app.js"></script>
         <script src="js/data.js"></script>
@@ -25,38 +26,38 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar" style="vertical-align: middle;">
+            <div class="collapse navbar-collapse"  id="collapsibleNavbar" style="vertical-align: middle;">
                 <!-- This section is hugging the right side -->
                 <div class="navbar-nav ml-auto">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="Landing.html#Category">
+                            <a class="nav-link" href="#Category">
                                 Categories
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Landing.html#NewArrivals">
+                            <a class="nav-link" href="#NewArrivals">
                                 Hot Deals
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Landing.html#AboutUs">
+                            <a class="nav-link" href="#AboutUs">
                                 About Us
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Landing.html#Achieve">
+                            <a class="nav-link" href="#Achieve">
                                 Achievements
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Landing.html#Founders">
+                            <a class="nav-link" href="#Founders">
                                 Founders
                             </a>
                         </li>
                     </ul>
                     &nbsp;&nbsp;
-                    <a href="#">
+                    <a href="#" data-toggle="modal" data-target="#LoginModal">
                         <i class="fas fa-sign-in fa-md"></i>
                         <div class="text-center">
                             <span>Login</span>
@@ -123,10 +124,9 @@
     // This is for Wow.js
     new WOW().init();
 
+    // get querystring to determine product ID passed on
     var productID = window.location.search;
     productID = productID.split("=")[1];
-    debugger;
-    
 
     var product = ProductsArray.find(x => x.ID == productID);
     document.getElementById("prdName").innerHTML = product.productName;
@@ -137,6 +137,7 @@
     function callAdd() {
         debugger;
         addProduct(product);
+        swal("Product Successfully Added", "You may proceed to checkout if you wish.", "success");
     }
 
 </script>

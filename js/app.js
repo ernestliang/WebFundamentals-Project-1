@@ -120,22 +120,22 @@ function populateCheckout () {
             debugger;
     
             // Looking though and checking the name
-            var objName = document.createElement("h5");
+            var objName = document.createElement("h3");
             objName.innerHTML = "Product: " + firstProduct.productName;
             descCol.appendChild(objName);
     
             // Looking through and checking the price
-            var objPrice = document.createElement("h6");
+            var objPrice = document.createElement("h5");
             objPrice.innerHTML = "Price: " + firstProduct.price;
             descCol.appendChild(objPrice);
     
             // Looking through and checking the quantity
-            var objQty = document.createElement("h6");
+            var objQty = document.createElement("h5");
             objQty.innerHTML = "Quantity: " + firstProduct.qty;
             descCol.appendChild(objQty);
     
             // Looking through and checking the Total price
-            var objTotalPrice = document.createElement("h6");
+            var objTotalPrice = document.createElement("h5");
             objTotalPrice.innerHTML = "Total Price: " + ((firstProduct.price)*(firstProduct.qty));
             descCol.appendChild(objTotalPrice);
     
@@ -160,9 +160,9 @@ function populateCheckout () {
         }
     
         var finalPrice = document.getElementById("totalPrice");
-        finalPrice.innerHTML = "Total Price: " + getTotalPrice() + "$";
+        finalPrice.innerHTML = getTotalPrice() + "$";
         var finalQty = document.getElementById("totalQty");
-        finalQty.innerHTML = "Total Quantity: " + getTotalQuantity();
+        finalQty.innerHTML = getTotalQuantity() + " items";
     }
 };
 
@@ -204,9 +204,9 @@ function clearProducts() {
         window.sessionStorage.removeItem("pullme");
         document.getElementById("productDisplay").innerHTML = "";
         var finalPrice = document.getElementById("totalPrice");
-        finalPrice.innerHTML = "Total Price: 0$";
+        finalPrice.innerHTML = "0$";
         var finalQty = document.getElementById("totalQty");
-        finalQty.innerHTML = "Total Quantity: 0";
+        finalQty.innerHTML = "0";
 
 };
 
