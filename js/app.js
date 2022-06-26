@@ -201,29 +201,33 @@ function removeProduct(productId) {
 
 // This function is to clear the cart and the page`
 function clearProducts() {
-        window.sessionStorage.removeItem("pullme");
-        document.getElementById("productDisplay").innerHTML = "";
-        var finalPrice = document.getElementById("totalPrice");
-        finalPrice.innerHTML = "0$";
-        var finalQty = document.getElementById("totalQty");
-        finalQty.innerHTML = "0";
+    window.sessionStorage.removeItem("pullme");
+    document.getElementById("productDisplay").innerHTML = "";
+    var finalPrice = document.getElementById("totalPrice");
+    finalPrice.innerHTML = "0$";
+    var finalQty = document.getElementById("totalQty");
+    finalQty.innerHTML = "0";
 
 };
 
 function getTotalQuantity(){
     let totalQty = 0;
     var getQty = JSON.parse(window.sessionStorage.getItem("pullme"));
-    for (var i=0; i<getQty.length; i++){
-        totalQty += getQty[i].qty;
-    }
+    if (getQty != null){
+        for (var i=0; i<getQty.length; i++){
+            totalQty += getQty[i].qty;
+        }
+    };
     return totalQty;
 };
 
 function getTotalPrice(){
     let totalPrice = 0;
     var getPrice = JSON.parse(window.sessionStorage.getItem("pullme"));
-    for (var i=0; i<getPrice.length; i++){
-        totalPrice += ((getPrice[i].price)*(getPrice[i].qty));
-    }
+    if (getPrice != null){
+        for (var i=0; i<getPrice.length; i++){
+            totalPrice += ((getPrice[i].price)*(getPrice[i].qty));
+        }
+    };
     return totalPrice;
 };
