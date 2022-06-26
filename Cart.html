@@ -132,7 +132,7 @@
 <script>
     // This is for Wow.js
     new WOW().init();
-    debugger;
+    
     // !!! THIS SECTION WILL BE MAKING THE TABLE WITH LOOPS !!! //
 
     // First, we need to make sure this automatically triggers on page load // 
@@ -142,7 +142,11 @@
 
     function letThemKnow() {
         if (getTotalQuantity() == 0){
-            swal({icon:"error",});
+            swal({
+                title:"Cart is empty!",
+                text:"Please select a product first!",
+                icon:"error"
+            });
         }
         else {
             swal("Purchase Successful!", "We hope you come to shop with us again!", "success");
